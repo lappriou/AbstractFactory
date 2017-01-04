@@ -25,7 +25,7 @@ namespace Abstract_Factory
             InitializeComponent();
             SelectionTheme.ItemsSource = ListTheme;
 
-            if(SelectionTheme.SelectedIndex)
+
             IWidgetFactory Theme = new ARKTheme();
 
             BuResultat.Background = new BrushConverter().ConvertFromString(Theme.ChargerTheme()) as SolidColorBrush;
