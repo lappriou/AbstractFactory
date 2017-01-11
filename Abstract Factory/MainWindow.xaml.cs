@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,7 +21,7 @@ namespace Abstract_Factory
     /// </summary>
     public partial class MainWindow : Window
     {
-        IWidgetFactory Theme;
+        
         public MainWindow()
         {
             InitializeComponent();
@@ -31,20 +32,12 @@ namespace Abstract_Factory
 
         }
 
-        public List<string> ListTheme = new List<string> { "Dofus", "ARK"};
+        public ObservableCollection<IWidgetFactory> ListTheme = new ObservableCollection<IWidgetFactory> { new ARKTheme(), new DofusTheme()};
 
         private void SelectionTheme_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if(SelectionTheme.SelectedIndex == 1)
-            {
-                Theme = new ARKTheme();
-            }
 
-            if (SelectionTheme.SelectedIndex == 0)
-            {
-                Theme = new DofusTheme();
-            }
-
+            IWidgetFactory Theme = (IWidgetFactory) SelectionTheme.SelectedItem;
             BuResultat.Background = new BrushConverter().ConvertFromString(Theme.ChargerTheme()) as SolidColorBrush;
         }
     }

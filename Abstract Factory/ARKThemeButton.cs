@@ -15,6 +15,4 @@ namespace Abstract_Factory
             return color;
         }
     }
-
-
 }

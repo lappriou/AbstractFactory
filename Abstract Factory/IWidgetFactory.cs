@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Abstract_Factory
 {
-    interface IWidgetFactory
+    public interface IWidgetFactory
     {
          string ChargerTheme();
     }
