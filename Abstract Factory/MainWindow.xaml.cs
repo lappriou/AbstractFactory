@@ -20,20 +20,32 @@ namespace Abstract_Factory
     /// </summary>
     public partial class MainWindow : Window
     {
+        IWidgetFactory Theme;
         public MainWindow()
         {
             InitializeComponent();
             SelectionTheme.ItemsSource = ListTheme;
 
 
-            IWidgetFactory Theme = new ARKTheme();
 
-            BuResultat.Background = new BrushConverter().ConvertFromString(Theme.ChargerTheme()) as SolidColorBrush;
 
         }
 
         public List<string> ListTheme = new List<string> { "Dofus", "ARK"};
 
+        private void SelectionTheme_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(SelectionTheme.SelectedIndex == 1)
+            {
+                Theme = new ARKTheme();
+            }
 
-}
+            if (SelectionTheme.SelectedIndex == 0)
+            {
+                Theme = new DofusTheme();
+            }
+
+            BuResultat.Background = new BrushConverter().ConvertFromString(Theme.ChargerTheme()) as SolidColorBrush;
+        }
+    }
 }

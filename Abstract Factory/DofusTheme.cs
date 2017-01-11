@@ -8,7 +8,7 @@ namespace Abstract_Factory
 {
     public class DofusTheme: IWidgetFactory
     {
-        string color = "green";
+
 
         DofusThemeButton Button = new DofusThemeButton();
         public string ChargerTheme()
