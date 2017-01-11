@@ -9,6 +9,10 @@ namespace Abstract_Factory
     public class ARKTheme : IWidgetFactory
     {
         ARKThemeButton button = new ARKThemeButton();
+        public override string ToString()
+        {
+            return base.ToString() + "ARK";
+        }
         public string ChargerTheme()
         {
             

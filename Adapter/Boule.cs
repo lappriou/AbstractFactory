@@ -4,12 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Abstract_Factory
+namespace Adapter
 {
-    public interface IWidgetFactory
+    class Boule
     {
-         string ChargerTheme();
-         string ToString();
+        public Boule(IPiste piste)
+        {
 
+        }
+
+        public void Lancer() { }
     }
 }

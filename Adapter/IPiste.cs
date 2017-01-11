@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Abstract_Factory
+namespace Adapter
 {
-    public interface IWidgetFactory
+    interface IPiste
     {
-         string ChargerTheme();
-         string ToString();
-
+        int getLargeur();
+        int getHauteur();
     }
 }

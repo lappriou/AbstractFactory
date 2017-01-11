@@ -14,6 +14,12 @@ namespace Abstract_Factory
         public string ChargerTheme()
         {
             return Button.GetColorButton();
+
+        }
+
+        public override string ToString()
+        {
+            return base.ToString() + "Dofus";
         }
     }
 }
